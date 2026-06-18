@@ -5,7 +5,7 @@ Static HTML served by nginx, deployed on Coolify.
 
 - **Demo URL:** https://larapainting.revenuebeacon.com
 - **Source of truth for design/spec:** `~/Desktop/lara-painting-pro/` (SPEC.md, design-preview.html, logo-options.html)
-- Phone: (702) 970-1333 (real). Goal: phone calls + estimate-form leads. No accounts/auth.
+- Phone: (702) 931-7005 (real — matches Google Business Profile NAP). Goal: phone calls + estimate-form leads. No accounts/auth.
 
 ## Deploy
 Push to `main` → Coolify (Dockerfile build pack) rebuilds the nginx image and serves `index.html`.
