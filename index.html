@@ -171,6 +171,10 @@ header .tel:hover{color:var(--clay)}
 .portrait .badge{position:absolute;top:22px;left:22px;background:var(--marigold);color:var(--ink);font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:6px 11px;border-radius:7px}
 .portrait .q{font-family:var(--disp);font-weight:700;font-size:24px;line-height:1.2}
 .portrait .by{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--marigold);margin-top:14px}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,35,59,.92),rgba(15,35,59,.4));z-index:1}
+.portrait .badge{z-index:2}
+.portrait .q,.portrait .by{position:relative;z-index:2}
 
 /* ---------- process ---------- */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
@@ -247,7 +251,9 @@ footer .blurb{color:#7e8aa0;max-width:300px;margin-top:16px}
 /* gallery tiles read as photos, not swatches */
 .gal .g{box-shadow:inset 0 -34px 40px rgba(0,0,0,.16),inset 0 0 0 1px rgba(255,255,255,.12)}
 .gal .g::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");opacity:.22;mix-blend-mode:multiply}
-.gal .g::after{content:"";position:absolute;left:14%;top:18%;width:42%;height:54%;border:1px solid rgba(255,255,255,.25);border-radius:2px} /* faint framed-wall hint */
+.gal .g::before,.gal .g::after{display:none}
+.gal .g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.gal .g span{z-index:2} /* faint framed-wall hint */
 
 /* process steps as a connected sequence */
 .steps{position:relative}
@@ -403,13 +409,13 @@ footer .blurb{color:#7e8aa0;max-width:300px;margin-top:16px}
 <!-- gallery -->
 <section class="sec" id="gallery"><div class="wrap shead">
   <span class="eyebrow">Recent work</span>
-  <h2>Before &amp; after</h2>
-  <p>A few of 400+ project photos across the Valley. <a href="#estimate" style="color:var(--clay);font-weight:600">Get a free estimate →</a></p>
+  <h2>Our recent work</h2>
+  <p>A few of 400+ real project photos across the Valley. <a href="#estimate" style="color:var(--clay);font-weight:600">Get a free estimate →</a></p>
   <div class="gal">
-    <div class="g g1"><span>Interior · Las Vegas</span></div><div class="g g2"><span>Exterior · Henderson</span></div>
-    <div class="g g3"><span>Cabinets · Summerlin</span></div><div class="g g4"><span>Commercial · Las Vegas</span></div>
-    <div class="g g5"><span>Interior · N. Las Vegas</span></div><div class="g g6"><span>Exterior · Enterprise</span></div>
-    <div class="g g7"><span>Cabinets · Henderson</span></div><div class="g g8"><span>Stucco · Las Vegas</span></div>
+    <div class="g"><img src="assets/photos/exterior-crew-1.jpg" alt="Lara Painting crew painting a stucco exterior"/><span>Exterior · crew at work</span></div><div class="g"><img src="assets/photos/exterior-1.jpg" alt="Freshly painted stucco home exterior"/><span>Exterior repaint</span></div>
+    <div class="g"><img src="assets/photos/interior-kitchen-1.jpg" alt="Kitchen interior repaint"/><span>Kitchen repaint</span></div><div class="g"><img src="assets/photos/exterior-2.jpg" alt="Repainted garage door and trim"/><span>Garage &amp; trim</span></div>
+    <div class="g"><img src="assets/photos/interior-1.jpg" alt="Bedroom repaint with fresh white walls"/><span>Bedroom repaint</span></div><div class="g"><img src="assets/photos/cabinet-1.jpg" alt="Kitchen cabinet painting in progress"/><span>Cabinet painting</span></div>
+    <div class="g"><img src="assets/photos/interior-2.jpg" alt="Living room repaint with clean white walls"/><span>Living room repaint</span></div><div class="g"><img src="assets/photos/exterior-5.jpg" alt="Las Vegas home exterior painting"/><span>Exterior · Las Vegas</span></div>
   </div>
 </div></section>
 
@@ -427,7 +433,7 @@ footer .blurb{color:#7e8aa0;max-width:300px;margin-top:16px}
     </div>
   </div>
   <div class="portrait">
-    <span class="bigq" aria-hidden="true">”</span>
+    <img src="assets/photos/exterior-crew-1.jpg" alt="Lara Painting Pro crew painting a home exterior"/>
     <span class="badge">Top Pro ’24 + ’25</span>
     <div class="q">"Best painter and value in Vegas, highly recommend."</div>
     <div class="by">Angelica H. · Summerlin</div>
