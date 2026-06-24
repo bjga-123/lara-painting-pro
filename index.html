@@ -34,7 +34,8 @@
   --shadow:0 14px 40px rgba(21,35,59,.10);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px;scroll-padding-bottom:84px}
+html{scroll-behavior:smooth;scroll-padding-top:80px;scroll-padding-bottom:84px;overflow-x:clip}
+body{overflow-x:clip;max-width:100%}
 *:focus-visible{outline:2.5px solid var(--marigold);outline-offset:3px;border-radius:4px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.btn-gold:hover,.card:hover{transform:none}}
 body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.62;font-size:17px;-webkit-font-smoothing:antialiased}
